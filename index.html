@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Color Palette Generator</h1>
+            <p>Create beautiful color palettes with ease. Generate, customize, and copy color <br>schemes for your projects.</p>
+        </header><br>
+        <div class="buttons">
+            <label class="btn1">
+                <p>Number of Colors</p>
+                <input type="range" min="3" max="9" value="5" id="colorCount"/>
+                <span id="countLabel">3</span> 
+            </label>
+            <label class="btn2">
+                <p>Color Mode</p>
+                <select id="colorMode">
+                    <option value="random">Random</option>
+                    <option value="monochrome">Monochrome</option>
+                    <option value="analogous">Analogous</option>
+                    <option value="complementary">Complementary</option>
+                    <option value="triadic">Triadic</option>
+                </select>
+            </label>
+            <label  class="btn3">
+                <p>Base Color</p>
+                <input type="color" id="baseColor" />
+                <button id="randomColor">
+                    <i class="fas fa-random mr-2"></i> Random
+                </button>
+            </label><br>
+            <label>
+                <button id="generateBtn">
+                    <i class="fas fa-palette mr-2"></i> Generate Palette
+                </button>
+            </label>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
