@@ -40,6 +40,7 @@ body{
 #colorMode{
     font-size: 1rem;
     background: linear-gradient(180deg, #efecec, #ffffff);
+    border: none;
 }
 #baseColor{
     size: 10px 10px;  
@@ -76,7 +77,7 @@ body{
 #generateBtn:hover{
     background: linear-gradient(90deg , #643fc9, #8c37b1);
 }
-.btn1, .btn2, .btn3 {
+.btn1,.btn2, .btn3 {
     margin-right: 0; 
 }
 
