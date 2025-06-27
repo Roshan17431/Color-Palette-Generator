@@ -78,6 +78,7 @@ body{
 }
 #generateBtn:hover{
     background: linear-gradient(90deg , #643fc9, #8c37b1);
+    cursor: pointer;
 }
 .btn1,.btn2, .btn3 {
     margin-right: 0; 
@@ -85,7 +86,7 @@ body{
 /* Color display section */
 
 
-
+/*
 .parent {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -161,4 +162,5 @@ body{
     background-color: blueviolet;
     border-radius: 10px;
 }
+*/
         

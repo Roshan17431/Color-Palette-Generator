@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const colorMode = document.getElementById("colorMode");
     const baseColor = document.getElementById("baseColor");
     const generateBtn = document.getElementById("generateBtn");
+    const randomColorBtn = document.getElementById("randomColor");
+
+    randomColorBtn.addEventListener("click",()=>{
+        baseColor.value = getRandomColor();
+    });
+    generateBtn.addEventListener("click",generatePalette);
 
     rangeInput.addEventListener("input",()=>{
         countLabel.textContent = rangeInput.value;
@@ -24,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
             r = parseInt(hex[1] + hex[1], 16);
             g = parseInt(hex[2] + hex[2], 16);
             b = parseInt(hex[3] + hex[3], 16);
-        } else if (hex.length == 7) {
+        } 
+        else if (hex.length == 7) {
             r = parseInt(hex[1] + hex[2], 16);
             g = parseInt(hex[3] + hex[4], 16);
             b = parseInt(hex[5] + hex[6], 16);
@@ -144,9 +151,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
 
         }
+        if (mode !== 'random') {
+            colors.sort((a, b) => {
+                const [h1] = hexToHSL(a);
+                const [h2] = hexToHSL(b);
+                return h1 - h2;
+            });
+        }
+        displayPalette(colors);
+    }
+    function displayPalette(colors) {
+        const parent = document.getElementById("palette");
+        parent.innerHTML = '';
+        colors.forEach((color) => {
+            const colorBox = document.createElement("div")
+            colorBox.className = "color-box";
+            colorBox.style.height = "180px";
+            colorBox.style.backgroundColor = '#fff';
+            colorBox.style.borderRadius = "10px";
+            colorBox.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            colorBox.style.overflow = 'hidden';
+            colorBox.style.flexDirection = 'column';
+            colorBox.style.justifyContent = 'center';
+
+            parent.appendChild(colorBox);
+        })
         
-
-
     }
 
 
