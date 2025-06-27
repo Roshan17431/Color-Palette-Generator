@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const baseColor = document.getElementById("baseColor");
     const generateBtn = document.getElementById("generateBtn");
     const randomColorBtn = document.getElementById("randomColor");
+    const parent = document.getElementById("parent");
 
     randomColorBtn.addEventListener("click",()=>{
         baseColor.value = getRandomColor();
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return color;
     }
-    function hexToHSL(){
+    function hexToHSL(hex){
         // Convert hex to RGB first
         let r=0, g=0, b=0;
         if (hex.length == 4) {
@@ -161,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         displayPalette(colors);
     }
     function displayPalette(colors) {
-        const parent = document.getElementById("palette");
+        
         parent.innerHTML = '';
         colors.forEach((color) => {
             const colorBox = document.createElement("div")
@@ -171,10 +172,17 @@ document.addEventListener('DOMContentLoaded', function() {
             colorBox.style.borderRadius = "10px";
             colorBox.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
             colorBox.style.overflow = 'hidden';
+            colorBox.style.display = 'flex';
             colorBox.style.flexDirection = 'column';
-            colorBox.style.justifyContent = 'center';
+            colorBox.style.justifyContent = 'space-between';
 
+            const colorDisplay = document.createElement('div');
+            colorDisplay.style.height = '70%';
+            colorDisplay.style.backgroundColor = color;
+
+            colorBox.appendChild(colorDisplay);
             parent.appendChild(colorBox);
+            
         })
         
     }
