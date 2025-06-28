@@ -86,81 +86,13 @@ body{
 /* Color display section */
 
 
-/*
+
 .parent {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 1500px;
+    padding: 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    justify-content: center;
-    height: 500px;
-    
 }
-    
-.div2 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    background-color: #5e3ac1;
-    border-radius: 10px;
-}
-
-
-.div3 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    background-color: #764af1;
-    border-radius: 10px;
-}
-
-.div4 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    background-color: aqua;
-    border-radius: 10px;
-}
-
-.div6 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 3;
-    background-color: #9942c7;
-    border-radius: 10px;
-}
-
-.div7 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 3;
-    background-color: #8c37b1;
-    border-radius: 10px;
-}
-
-.div8 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    grid-row-start: 3;
-    background-color: #643fc9;
-    border-radius: 10px;
-}
-
-.div10 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 5;
-    grid-row-start: 1;
-    background-color: #de6363;
-    border-radius: 10px;
-}
-
-.div11 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 5;
-    grid-row-start: 3;
-    background-color: blueviolet;
-    border-radius: 10px;
-}
-*/
         

@@ -50,9 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const d = max - min;
             s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
             switch (max) {
-                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-                case g: h = (b - r) / d + 2; break;
-                case b: h = (r - g) / d + 4; break;
+                case r: h = (g - b) / d + (g < b ? 6 : 0);
+                     break;
+                case g: h = (b - r) / d + 2; 
+                    break;
+                case b: h = (r - g) / d + 4; 
+                    break;
             }
             h /= 6;
         }
@@ -180,8 +183,49 @@ document.addEventListener('DOMContentLoaded', function() {
             colorDisplay.style.height = '70%';
             colorDisplay.style.backgroundColor = color;
 
+            const infoBox = document.createElement('div');
+            infoBox.style.display = 'flex';
+            infoBox.style.justifyContent = 'space-between';
+            infoBox.style.alignItems = 'center';
+            infoBox.style.padding = '10px';
+
+            const hexText = document.createElement('span');
+            hexText.textContent = color.toUpperCase();
+            hexText.style.fontFamily = 'monospace';
+            hexText.style.fontSize = '14px';
+
+            const copyBtn = document.createElement('button');
+            copyBtn.textContent = 'Copy';
+            copyBtn.style.border = 'none';
+            copyBtn.style.backgroundColor = 'transparent';
+            copyBtn.style.cursor = "pointer";
+            copyBtn.style.color = "#6b7280"; 
+            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+            copyBtn.title = 'Copy to clipboard';
+            copyBtn.style.fontSize = '16px';
+            copyBtn.style.transition = "color 0.3s ease";
+
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(color);
+                showToast('Color copied to clipboard!');
+            });
+
+            copyBtn.addEventListener('mouseover', () => {
+                copyBtn.style.color = "#374151"; 
+            });
+            copyBtn.addEventListener('mouseout', () => {
+                copyBtn.style.color = "#6b7280"; 
+            });
+            
+            
+
+
+
             colorBox.appendChild(colorDisplay);
             parent.appendChild(colorBox);
+            colorBox.appendChild(infoBox);
+            infoBox.appendChild(hexText);
+            infoBox.appendChild(copyBtn);
             
         })
         
